@@ -37,3 +37,30 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * The above way of writing code will become mess and thats why we have  *** JSX ***
  */
 
+/**
+ * 
+ * COMMANDS USED 
+ * 
+ * - npm init
+ * Parcel: 
+ * - npx parcel index.html
+ */
+
+
+/**
+ * GOOD THINGS TO DO IN REACT
+ */
+
+/**
+ * BAD THINGS TO DO IN REACH 
+ * 
+ * 1. to bring React in project using cdn is not a good way , use package.json instead  
+ *  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+ */
+
+
+/**
+ * ************************EPISODE 3 : LAYING THE FOUNDATION**************************
+ * 
+ */

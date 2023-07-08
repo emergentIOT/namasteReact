@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 const heading = React.createElement("h1", {
     id:"testing"
 }, "Hello from React");
@@ -15,3 +18,4 @@ const heading = React.createElement("h1", {
 console.log(heading);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(heading);
+
