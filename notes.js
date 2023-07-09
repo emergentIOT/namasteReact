@@ -63,4 +63,54 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
 /**
  * ************************EPISODE 3 : LAYING THE FOUNDATION**************************
  * 
+ * 
+ * 1. React element:
+ *      It is a object which will render onto the screen and return or become HTML
+ *      React.createElement("h1", {"id":"this_is_heading_id"}, "This is what you want to write inside heading tag");
+ * 
+ * 2. JSX - It is not HTML and JS
+ *      It is a powerful way to wrte html like syntax in React 
+ *      It is also used to create React.element
+ * 
+ *      - JSX transcompile before it reached JS compiler, 
+ *          makes the JSX code readable for browser search engine, 
+ *              this process is done by APRCEL which gives further responsibility to babel.js (powerful js compiler)
+ * 
+ *      JSX(returns object) --> babel(convert the JSX code to make it readable) --> React element(returns object) --> render on broser as HTML
+ *              
+ *         - {writing JS inside of JSX using this expression}
+ *         - { console.log("this will also work") }
+ * 
+ *      **** Two ways to call FunctionalComponent ****
+ *          const heading = "I am being called in functional component and can be render tw ways as shown below";
+ *          const FunctionalCompoent = () => {
+ *              return ({heading});
+ *             }
+ *         - {FunctionalComponent()}
+ *         - <FunctionalComponent />
+ *      
+ * 
+ * 
+ * 3. REACT component
+ *      3.1 class based - old way 
+ *      3.2 functional based - new way 
+ *          - it is a simple JS function which returns any peice of JSX
+ *          const Functional
+ * 
+ *      way to render component
+ * 
+ * 4. React Fragment
+ *      to wrap two divs around parent div , also act as empty tag
+ *      <React.Fragment> OR <>
+             <div id='container_1'>
+                        <h1>I am here</h1>
+             </div>
+             <div id='container_2'></div>
+         </React.Fragment> OR </>
+ * 
+ * 
+ * 
+ * ************************FINISHING EPISODE 3 : LAYING THE FOUNDATION**************************
+ * 
+ * 
  */

@@ -4,7 +4,8 @@
   "description": "This is a repo for online course given by Namaste React",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-server": "npx parcel index.html"
+    "start-server": "npx parcel index.html",
+    "build": "npx build index.html"
   },
   "keywords": [],
   "author": "",
