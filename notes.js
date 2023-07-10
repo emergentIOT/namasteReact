@@ -74,7 +74,7 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 
  *      - JSX transcompile before it reached JS compiler, 
  *          makes the JSX code readable for browser search engine, 
- *              this process is done by APRCEL which gives further responsibility to babel.js (powerful js compiler)
+ *              this process is done by PARCEL which gives further responsibility to babel.js (powerful js compiler)
  * 
  *      JSX(returns object) --> babel(convert the JSX code to make it readable) --> React element(returns object) --> render on broser as HTML
  *              
@@ -110,7 +110,32 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 
  * 
  * 
+ * 
  * ************************FINISHING EPISODE 3 : LAYING THE FOUNDATION**************************
+ * 
+ * ************************EPISODE 4 : TALK IS CHEAP / SHOW ME THE CODE*************************
+ * 
+ * 1. 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * ***********************FINISHING EPISODE 4 : TALK IS CHEAP / SHOW ME THE CODE***************
  * 
  * 
  */

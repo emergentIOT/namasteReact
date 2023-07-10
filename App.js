@@ -87,5 +87,5 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //Way to render component, the below syntax understand by babel
 
 //root.render(<AnotherWayToWriteFunctionalComponent_1 />);
-root.render(jsxToMultipleLines());
+root.render(AnotherWayToWriteFunctionalComponent_1());
 
