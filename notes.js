@@ -1,4 +1,8 @@
 /**
+ * MORE LEARNING CONTENT FOR THIS REPO : 
+ * 
+ *  ref: https://github.com/chetannada/Namaste-React
+ * 
  * Browser dont understand React
  * 
  * What is CDN ?
@@ -115,11 +119,55 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 
  * ************************EPISODE 4 : TALK IS CHEAP / SHOW ME THE CODE*************************
  * 
- * 1. 
+ * 1. props
+ *     
+ * const RestaurantCard = (props) => {
+    return(
+        <div className="res-card">
+            <img 
+            className="resImg"
+            alt="res-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRegpy22n7W_ZWsaXcganhGlyP-VXB_riD1FOFCOxxvlA&s" />
+            <h3>{props.resName}</h3>
+            <p>{props.cuisine}</p>
+            <p>4.3 STARS</p>
+            <p>30 mins</p>
+        </div>
+    )
+} 
+
+
+            <div className="res-container">
+                <RestaurantCard resName="Desi dhaba" cuisine="chinese"/>
+                <RestaurantCard resName="Tandoori den" cuisine="Indian"/>
+            </div>
  * 
  * 
  * 
+ * 2. config or server driven UI ?
+ * - website driven by data. 
  * 
+ * 3. ref api data : https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING
+ * 
+ * 4. OPTIONAL CHAINING : 
+ * Optional chaining is a feature introduced in JavaScript that provides a 
+ * concise way to access properties or call functions on an object that
+ *  might be null or undefined without causing an error. 
+ * It allows you to avoid lengthy and repetitive null checks 
+ * before accessing nested properties or calling nested functions.
+     resList?.data
+ * 
+ * 
+ *  WITHOUT OPTIONAL CHAINING
+    const city = user.address && user.address.city;
+    console.log(city); // Output: New York
+
+    // With optional chaining
+    const city = user.address?.city;
+    console.log(city); // Output: New York
+
+    // Accessing a non-existing property
+    const country = user.address?.country;
+    console.log(country); // Output: undefined
  * 
  * 
  * 
