@@ -169,7 +169,8 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
     const country = user.address?.country;
     console.log(country); // Output: undefined
  * 
- * 
+   5. resList.map((restaurant) => <RestaurantCard key={restaurant.data.id} resList={restaurant}/>)
+ *  not recommended to use >>>>>>index as key<<<<<<<< using uniqueId is best practice. 
  * 
  * 
  * 
