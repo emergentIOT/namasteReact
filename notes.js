@@ -186,5 +186,13 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 
  * ***********************FINISHING EPISODE 4 : TALK IS CHEAP / SHOW ME THE CODE***************
  * 
+ * ************************EPISODE 5 : LETS GET HOOKED ****************************************
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * ************************FINISHING EPISODE 5 : LETS GET HOOKED ****************************************
  * 
  */
