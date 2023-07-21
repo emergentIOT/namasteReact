@@ -192,11 +192,11 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 
  * 2. Two types of exports:
  * 
- * - export default CONST_NAME or COMPONENT_NAME
- * - NAMED EXPORT : 
+ * 2.1 export default CONST_NAME or COMPONENT_NAME
+ *      - NAMED EXPORT : 
  * 
- * EXPORT CONST VAR_NAME="";
- * IMPORT {VAR_NAME} FRP, 
+ * 2.2 export CONST VAR_NAME="";
+ *      - IMPORT {VAR_NAME} FRP, 
  * 
  * 
  * 
