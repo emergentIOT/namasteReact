@@ -1,27 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import './index.css';
-
-const Header = () => {
-    return(
-        <>
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png" />
-            </div>
-        
-        <div className="nav-items">
-            <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
-                <li>Cart</li>
-            </ul>
-        </div>
-        </div>
-        </>
-    )
-}
+import RestaurantCard from "./RestaurantCard";
 
 //dummy Swiggy API data: https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING
 const resList =  [
@@ -443,23 +420,6 @@ const resList =  [
     "subtype": "basic"
     }];
 
-const RestaurantCard = (props) => {
-    const {resList} = props;
-    const { area, cloudinaryImageId, cuisines, totalRatings, deliveryTime, name } = resList?.data;
-    console.log("props", props);
-    return(
-        <div className="res-card">
-            <img 
-            className="resImg"
-            alt="res-logo" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} />
-            <h3>{name}</h3>
-            <p>{cuisines}</p>
-            <p>{totalRatings} STARS</p>
-            <p>Time to deliver: {deliveryTime} </p>
-        </div>
-    )
-}
-
 const Body = () => {
     return (
         <>
@@ -488,16 +448,4 @@ const Body = () => {
     )
 }
 
-const AppLayout = () => {
-    return (
-    <>
-        <div className="App">
-            <Header />
-            <Body />
-        </div>
-    </>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default Body;

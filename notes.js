@@ -157,7 +157,7 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
      resList?.data
  * 
  * 
- *  WITHOUT OPTIONAL CHAINING
+ *  5. WITHOUT OPTIONAL CHAINING
     const city = user.address && user.address.city;
     console.log(city); // Output: New York
 
@@ -188,7 +188,7 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 
  * ************************EPISODE 5 : LETS GET HOOKED ****************************************
  * 
- * 
+ * 1. REACT HOOK
  * 
  * 
  * 
