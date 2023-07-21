@@ -188,6 +188,8 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 
  * ************************EPISODE 5 : LETS GET HOOKED ****************************************
  * 
+ * 
+ * 
  * 1. REACT HOOK
  * 
  * 2. Two types of exports:
@@ -199,7 +201,13 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  *      - IMPORT {VAR_NAME} FRP, 
  * 
  * 
- * 
+ * 3. REACT HOOKS
+ *      - They are normal JS functions
+ *      - React super power or utility functions
+ *      
+ *      3.1 useState()
+ *      3.2 useEffect()
+ * Need to import React Hooks
  * 
  * ************************FINISHING EPISODE 5 : LETS GET HOOKED ****************************************
  * 
