@@ -192,12 +192,14 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 
  * 1. REACT HOOK
  * 
- * 2. Two types of exports:
+ * 2. Two types of exports/ imports:
+ *      -- default export/import
+ *      -- named export/import
  * 
  * 2.1 export default CONST_NAME or COMPONENT_NAME
- *      - NAMED EXPORT : 
+ *       
  * 
- * 2.2 export CONST VAR_NAME="";
+ * 2.2 export CONST VAR_NAME="";  //named import export
  *      - IMPORT {VAR_NAME} FRP, 
  * 
  * 
@@ -205,9 +207,16 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  *      - They are normal JS functions
  *      - React super power or utility functions
  *      
- *      3.1 useState()
+ *      3.1 useState() - superpowerful state variables in React
+ *          It is used to create stateVariable, to maintain the state of your component.
+ *          - we use named import to get this in .js file 
+ *              eg: import { useState } from 'React'
  *      3.2 useEffect()
  * Need to import React Hooks
+ * 
+ * 
+ * 
+ * 
  * 
  * ************************FINISHING EPISODE 5 : LETS GET HOOKED ****************************************
  * 
