@@ -193,14 +193,13 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 1. REACT HOOK
  * 
  * 2. Two types of exports/ imports:
- *      -- default export/import
- *      -- named export/import
+ *      -- default export/import 
+ *              --import list from "list"
+ *              --export default functionName;
+ *      -- named export/import   
+ *              --import { list } from "list"
+ *              --export const name = "value";
  * 
- * 2.1 export default CONST_NAME or COMPONENT_NAME
- *       
- * 
- * 2.2 export CONST VAR_NAME="";  //named import export
- *      - IMPORT {VAR_NAME} FRP, 
  * 
  * 
  * 3. REACT HOOKS
