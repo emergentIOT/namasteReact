@@ -9,8 +9,7 @@ const RestaurantCard = (props) => {
     * It allows you to avoid lengthy and repetitive null checks 
     * before accessing nested properties or calling nested functions.
     */
-    const { area, cloudinaryImageId, cuisines, totalRatings, deliveryTime, name, avgRating } = resList?.data;
-    console.log("props", props);
+    const {  cloudinaryImageId, cuisines, totalRatings, deliveryTime, name, avgRating } = resList?.info;
     return(
         <div className="res-card">
             <img 

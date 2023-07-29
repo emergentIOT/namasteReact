@@ -2,7 +2,7 @@
 let resList =  [
     {
     "type": "restaurant",
-    "data": {
+    "info": {
     "type": "F",
     "id": "531480",
     "name": "Rollsking",
@@ -112,7 +112,7 @@ let resList =  [
     },
     {
     "type": "restaurant",
-    "data": {
+    "info": {
     "type": "F",
     "id": "445802",
     "name": "Murthalwala",
@@ -217,7 +217,7 @@ let resList =  [
     },
     {
     "type": "restaurant",
-    "data": {
+    "info": {
     "type": "F",
     "id": "601038",
     "name": "The Rolls Baba",
@@ -322,7 +322,7 @@ let resList =  [
     },
     {
     "type": "restaurant",
-    "data": {
+    "info": {
     "type": "F",
     "id": "557580",
     "name": "Delicious Parantha",

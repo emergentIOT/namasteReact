@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mock_data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /**
  * Super power variable or STATE variable
@@ -39,7 +39,8 @@ const Body = () => {
 //   }
 // ]);
   
-const[list, setList] = useState(resList);
+//const[list, setList] = useState(resList);
+const[list, setList] = useState([]);
 
 
   let list2 = [
@@ -60,6 +61,22 @@ const[list, setList] = useState(resList);
     }
   }
   ];
+
+  //Will only render once the component got render
+  useEffect(()=>{
+    //fetch Data here. 
+    fetchData();
+  }, []);
+
+ 
+  const fetchData = async () => {
+    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.2893144&lng=80.4604643&is-seo-homepage-enabled=true');
+    const json = await data.json();
+    console.log("apiData", json);
+    setList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
+  }
+  console.log("ResList", resList);
+
     return (
         <>
         <div className="body">
@@ -69,7 +86,7 @@ const[list, setList] = useState(resList);
                 className="filter-btn"
                 onClick={()=>{
                   //Write filter out to get avgRating > 4
-                  const filterList = list.filter(restaurant=>restaurant.data.avgRating>3);
+                  const filterList = list.filter(restaurant=>restaurant.info.avgRating>3);
                   setList(filterList);
                 }}>Top Rated Restaurant</button>
             </div>
@@ -83,7 +100,7 @@ const[list, setList] = useState(resList);
                 <RestaurantCard resList= {resList[3]} />
                  */
 
-                list.map((restaurant) => <RestaurantCard key={restaurant?.data.id} resList={restaurant}/>)
+                list.map((restaurant) => <RestaurantCard key={restaurant.info.id} resList={restaurant}/>)
 
               }  
                

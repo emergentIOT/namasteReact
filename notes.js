@@ -2,6 +2,7 @@
  * MORE LEARNING CONTENT FOR THIS REPO : 
  * 
  *  ref: https://github.com/chetannada/Namaste-React
+ *  ref: https://github.com/acdlite/react-fiber-architecture
  * 
  * Browser dont understand React
  * 
@@ -202,21 +203,36 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  * 
  * 
  * 
- * 3. REACT HOOKS
+ * 3. REACT HOOKS - hook is nothing but a normal js function, it has its own specific use case.
  *      - They are normal JS functions
  *      - React super power or utility functions
+ *      - use to ccreate state variable
  *      
  *      3.1 useState() - superpowerful state variables in React
  *          It is used to create stateVariable, to maintain the state of your component.
  *          - we use named import to get this in .js file 
  *              eg: import { useState } from 'React'
  *      3.2 useEffect()
+ * 
+ * 
+ * 
  * Need to import React Hooks
  * 
  * 
  * 
  * 
  * 
- * ************************FINISHING EPISODE 5 : LETS GET HOOKED ****************************************
+ * *********************************FINISHING EPISODE 5 : LETS GET HOOKED ****************************************
  * 
+ * 
+ * 
+ * *********************************EPISODE 6 : EXPLORING THE WORLD ****************************************
+ * 
+ * 1. useEffect(callback, dependency array) hook
+ *      - callback is called once component is rendered.
+ *      - dependency array
+ *      useEffect(()=> {console.log("useeffec called")}, [])
+ * 
+ * 
+ * ************************FINISHING EPISODE 6 : EXPLORING THE WORLD ****************************************
  */
