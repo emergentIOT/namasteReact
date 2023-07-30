@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mock_data";
 import { useState, useEffect } from "react";
+import { Shimmer } from "./Shimmer";
 
 /**
  * Super power variable or STATE variable
@@ -70,14 +71,24 @@ const[list, setList] = useState([]);
 
  
   const fetchData = async () => {
-    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.2893144&lng=80.4604643&is-seo-homepage-enabled=true');
+   // const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.2893144&lng=80.4604643&is-seo-homepage-enabled=true');
+    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&collection=83667');
     const json = await data.json();
-    console.log("apiData", json);
-    setList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
-  }
-  console.log("ResList", resList);
+    console.log("apiData", json?.data);
+    //below written code is not a good way to write code , please use optional chaining
+    //setList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
 
-    return (
+    //Optional chaining: 
+    setList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  }
+  //console.log("ResList", resList);
+
+  //Conditional rendering
+  // if(list.length === 0) {
+  //   return <Shimmer />;
+  // }
+
+    return list.length === 0 ? <Shimmer /> : (
         <>
         <div className="body">
             <div className="filter">

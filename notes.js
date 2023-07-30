@@ -212,7 +212,20 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  *          It is used to create stateVariable, to maintain the state of your component.
  *          - we use named import to get this in .js file 
  *              eg: import { useState } from 'React'
+ *      const[variableName, setVariableName] = useState("aman");
+ *              - now we cannot directly modify variableName instead --> setVariableName("giveUpdatedName"), it will 
+ *                  set the value of variableName.
+ *              - As when setVariableName got updated it will re render the component
  *      3.2 useEffect()
+ *          - This state will only called once component is rendered completely.
+ *              useEffect(()=>{
+ *                  getData()
+ *              }, []);
+ * 
+ *          const getData = async() => {
+ *              const apiData = await fetch("api link");
+ *              const jsonData = await apiData.json();
+ *            }
  * 
  * 
  * 
@@ -233,6 +246,15 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  *      - dependency array
  *      useEffect(()=> {console.log("useeffec called")}, [])
  * 
+ * 2. Shimmer UI
  * 
+ * 3.  
+ *  Conditional rendering
+    if(list.length === 0) {
+        return <Shimmer />;
+    }
+ * 
+    4. Why do we need state variable?
+    Ans: To make component dynamic    
  * ************************FINISHING EPISODE 6 : EXPLORING THE WORLD ****************************************
  */
