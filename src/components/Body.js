@@ -42,26 +42,7 @@ const Body = () => {
   
 //const[list, setList] = useState(resList);
 const[list, setList] = useState([]);
-
-
-  let list2 = [
-    {
-      data: {
-        "id": "531480",
-        "name": "Rollsking",
-        "avgRating": "3.3",
-        "cloudinaryImageId": "ts2jcaq0vadhut1ccoow"
-      }
-    },
-    {
-      data: {
-        "id": "53180",
-        "name": "Desi dhaba",
-        "avgRating": "2.0",
-        "cloudinaryImageId": "y9wnicph1o0ebmmsjsau"
-    }
-  }
-  ];
+const[searchText, setSearchText] = useState("");
 
   //Will only render once the component got render
   useEffect(()=>{
@@ -74,12 +55,12 @@ const[list, setList] = useState([]);
    // const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.2893144&lng=80.4604643&is-seo-homepage-enabled=true');
     const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&collection=83667');
     const json = await data.json();
-    console.log("apiData", json?.data);
+    console.log("apiData", json?.data.cards[2]);
     //below written code is not a good way to write code , please use optional chaining
     //setList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
 
     //Optional chaining: 
-    setList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //console.log("ResList", resList);
 
@@ -92,6 +73,29 @@ const[list, setList] = useState([]);
         <>
         <div className="body">
             <div className="filter">
+              {/**
+               * Search bar
+               */}
+              <div className="search">
+                {/**
+                 * We bind the input type text to the variable with empty string . 
+                 * And as input changes we need to update state variable
+                 */}
+                <input type="text" 
+                className="search-box" 
+                value={searchText} 
+                onChange={(e)=>{
+                  setSearchText(e.target.value)
+                }} />
+                <button onClick={() => {
+                  //Implement filter the restaurant cards and update UI
+                  //Need the search text over here from input box and bind the value of input text to local state variable.
+                  console.log(searchText);
+                  const filterRestaurant = list.filter(restaurant => restaurant.info.name.includes(searchText));
+                  setList(filterRestaurant);
+                }}>Search Button</button>
+              </div>
+              
               {/*Print high rating value only*/}
                 <button 
                 className="filter-btn"
