@@ -13,6 +13,16 @@
  * 
  */
 
+
+/**
+ * 
+ * *********************************REACT SUPER POWER****************************
+ *  
+ * 1. Diff algorithm
+ * 2. useState() Hook 
+ * 3. Using JSX
+ */
+
 /**
  * Updating the DOM is the expensive operation to add or remove an element. 
  * And thats one of the reason React was created
@@ -215,21 +225,13 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  *      const[variableName, setVariableName] = useState("aman");
  *              - now we cannot directly modify variableName instead --> setVariableName("giveUpdatedName"), it will 
  *                  set the value of variableName.
- *              - As when setVariableName got updated it will re render the component
- *      3.2 useEffect()
- *          - This state will only called once component is rendered completely.
- *              useEffect(()=>{
- *                  getData()
- *              }, []);
+ *              - As when setVariableName got updated it will re render the WHOLE component
+ *              - How can const update the variable ? 
+ *                  Answer: bascially when we setVariable("new value"), it will re redner the component with the new variable.
  * 
- *          const getData = async() => {
- *              const apiData = await fetch("api link");
- *              const jsonData = await apiData.json();
- *            }
+ *          
  * 
  * 
- * 
- * Need to import React Hooks
  * 
  * 
  * 
@@ -245,6 +247,16 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
  *      - callback is called once component is rendered.
  *      - dependency array
  *      useEffect(()=> {console.log("useeffec called")}, [])
+ * 
+ *      - This state will only called once component is rendered completely.
+ *              useEffect(()=>{
+ *                  getData()
+ *              }, []);
+ * 
+ *          const getData = async() => {
+ *              const apiData = await fetch("api link");
+ *              const jsonData = await apiData.json();
+ *            }
  * 
  * 2. Shimmer UI
  * 

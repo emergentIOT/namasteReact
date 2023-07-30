@@ -18,8 +18,9 @@ export const Header = () => {
                 <li>About Us</li>
                 <li>Contact Us</li>
                 <li>Cart</li>
-                <button className="login" onClick={()=>{
-                    setBtnName("LogOut")
+                <button className="login" 
+                    onClick={()=>{
+                    btnName === 'Login' ? setBtnName("LogOut") : setBtnName("Login")
                 }}>{btnName}</button>
             </ul>
         </div>
