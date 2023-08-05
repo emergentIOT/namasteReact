@@ -42,6 +42,8 @@ const Body = () => {
   
 //const[list, setList] = useState(resList);
 const[list, setList] = useState([]);
+
+const[filterRestaurant, setFilterRestaurant] = useState(list);
 const[searchText, setSearchText] = useState("");
 
   //Will only render once the component got render
@@ -60,7 +62,9 @@ const[searchText, setSearchText] = useState("");
     //setList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
 
     //Optional chaining: 
-    setList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log("text", json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilterRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //console.log("ResList", resList);
 
@@ -69,7 +73,7 @@ const[searchText, setSearchText] = useState("");
   //   return <Shimmer />;
   // }
 
-    return list.length === 0 ? <Shimmer /> : (
+    return  (
         <>
         <div className="body">
             <div className="filter">
@@ -91,8 +95,9 @@ const[searchText, setSearchText] = useState("");
                   //Implement filter the restaurant cards and update UI
                   //Need the search text over here from input box and bind the value of input text to local state variable.
                   console.log(searchText);
-                  const filterRestaurant = list.filter(restaurant => restaurant.info.name.includes(searchText));
-                  setList(filterRestaurant);
+                  const filterRestaurant = list.filter(restaurant => restaurant.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                  //setList(filterRestaurant);
+                  setFilterRestaurant(filterRestaurant);
                 }}>Search Button</button>
               </div>
               
@@ -115,7 +120,7 @@ const[searchText, setSearchText] = useState("");
                 <RestaurantCard resList= {resList[3]} />
                  */
 
-                list.map((restaurant) => <RestaurantCard key={restaurant.info.id} resList={restaurant}/>)
+                filterRestaurant.map((restaurant) => <RestaurantCard key={restaurant.info.id} resList={restaurant}/>)
 
               }  
                
