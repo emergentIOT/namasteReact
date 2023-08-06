@@ -277,7 +277,24 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
 
 
 ************************FINISHING EPISODE 7 : FINDING THE PATH ****************************************
- 
+ 1. Setting up react Router 
+    import { createBrowserRouter, RouterProvider }
 
+    const appRouter = createBrowserRouter([
+        {
+            path: ,
+            element
+        }
+    ]);
+
+    root.render(<RouterProvider router={appRouter} />);
+
+
+ 2. Hook provided by React router
+ 
+    { useRouteError }
+
+    const err = useReactError();
+    console.log(err);
 
     */
