@@ -297,4 +297,6 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
     const err = useReactError();
     console.log(err);
 
+3. Link component for navigation
+
     */

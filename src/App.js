@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import '../index.css';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import {Header} from "../src/components/Header";
 import Body from "../src/components/Body";
 import About from "./components/About";
@@ -13,7 +13,7 @@ const AppLayout = () => {
     <>
         <div className="App">
             <Header />
-            <Body />
+            <Outlet />
         </div>
     </>
     )
@@ -23,16 +23,23 @@ const appRouter = createBrowserRouter([
     { 
         path: "/",
         element: <AppLayout />,
+        children: [
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/about",
+                element: <About />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
+            }
+        ],
         errorElement: <Error />
-    }, 
-    {
-        path: "/about",
-        element: <About />
-    },
-    {
-        path: "/contact",
-        element: <Contact />
     }
+   
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<AppLayout />);
