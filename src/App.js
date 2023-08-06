@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {Header} from "../src/components/Header";
 import Body from "../src/components/Body";
 import About from "./components/About";
+import {Contact} from "./components/Contact" 
 
 const AppLayout = () => {
     return (
@@ -25,6 +26,10 @@ const appRouter = createBrowserRouter([
     {
         path: "/about",
         element: <About />
+    },
+    {
+        path: "/contact",
+        element: <Contact />
     }
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));

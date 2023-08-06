@@ -76,7 +76,7 @@ const[searchText, setSearchText] = useState("");
   //   return <Shimmer />;
   // }
 
-    return  (
+    return list.length === 0 ? <Shimmer /> :  (
         <>
         <div className="body">
             <div className="filter">
