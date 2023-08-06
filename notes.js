@@ -269,4 +269,15 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
     4. Why do we need state variable?
     Ans: To make component dynamic    
  * ************************FINISHING EPISODE 6 : EXPLORING THE WORLD ****************************************
- */
+ 
+************************ EPISODE 7 : FINDING THE PATH ****************************************
+ 
+
+
+
+
+************************FINISHING EPISODE 7 : FINDING THE PATH ****************************************
+ 
+
+
+    */

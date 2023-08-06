@@ -46,9 +46,12 @@ const[list, setList] = useState([]);
 const[filterRestaurant, setFilterRestaurant] = useState(list);
 const[searchText, setSearchText] = useState("");
 
-  //Will only render once the component got render
+  //if dependency array is empty [], Will only render once the component got render .
+  //if no dependency array , => useEffect() is called on every render .
+  //if dependency array is [list] => useEffect() called everytime when list got updated.
   useEffect(()=>{
     //fetch Data here. 
+    console.log("use effect called");
     fetchData();
   }, []);
 
@@ -62,9 +65,9 @@ const[searchText, setSearchText] = useState("");
     //setList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
 
     //Optional chaining: 
-    console.log("text", json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilterRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log("text", json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilterRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //console.log("ResList", resList);
 
