@@ -65,9 +65,9 @@ const[searchText, setSearchText] = useState("");
     //setList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
 
     //Optional chaining: 
-    console.log("text", json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilterRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log("text", json?.data?.cards);
+    setList(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilterRestaurant(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //console.log("ResList", resList);
 
