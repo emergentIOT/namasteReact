@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple JS Toggle</title>
+  <style>
+    body {
+      background-color: #f0f0f0; /* Initial background color */
+    }
+    .toggle-button {
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="demo()">Click Me!</button>
+  <button id="minus">-</button>
+  <p id="clickCount">Click count: 0</p>
+  
+  <button id="toggleColorButton">Toggle Background Color</button>
+  <button id="magicButton">Magic Button</button>
+
+<p id="me">i am amanddeep</p>
+<button id="change">change me</button>
+  <script>
+ //document.addEventListener('DOMContentLoaded', function() {
+  var text = document.getElementById("me");
+  change.addEventListener('click', function(){
+    me.textContent = "chal oye"
+  })
+
+  //document.body.style.backgroundColor = "red";
+  
+  const clickCountElement = document.getElementById('clickCount');
+  var clickCount = 0;
+
+  function demo() {
+    clickCount++;
+    clickCountElement.textContent = 'Click count: ' + clickCount;
+  }
+  // clickButton.addEventListener('click', function() {
+    
+  // });
+
+  minus.addEventListener('click', function(){
+    clickCount--;
+    clickCountElement.textContent = 'Click count: ' + clickCount;
+  })
+
+
+//});// magicButton.addEventListener('click', function() {
+  //   const magicButton = document.getElementById('magicButton');
+  // const colors = ['red', 'blue', 'green', 'yellow'];
+  //   const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  //   document.body.style.backgroundColor = randomColor;
+  // });
+//});
+toggleColorButton.addEventListener('click', function() {
+    const currentColor = document.body.style.backgroundColor;
+    if (currentColor === 'blue') {
+      document.body.style.backgroundColor = 'green';
+    } else {
+      document.body.style.backgroundColor = 'blue';
+    }
+  });
+
+//document.addEventListener('DOMContentLoaded', function() {
+ // const clickButton = document.getElementById('clickButton');
+
+
+  </script>
+</body>
+</html>

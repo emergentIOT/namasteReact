@@ -70,10 +70,13 @@ const[list, setList] = useState([]);
 
  
   const fetchData = async () => {
-    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.2893144&lng=80.4604643&is-seo-homepage-enabled=true');
+    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&collection=83667');
     const json = await data.json();
     console.log("apiData", json);
-    setList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
+    /**
+     * You have to make change only in line 79, in cards[i], where i is keep changing in the above api link, try from 0-11
+     */
+    setList(json.data.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   console.log("ResList", resList);
 
