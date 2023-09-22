@@ -60,14 +60,14 @@ const[searchText, setSearchText] = useState("");
    // const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.2893144&lng=80.4604643&is-seo-homepage-enabled=true');
     const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&collection=83667');
     const json = await data.json();
-    console.log("apiData", json?.data.cards[2]);
+    console.log("apiData", json?.data.cards[1]);
     //below written code is not a good way to write code , please use optional chaining
     //setList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
 
     //Optional chaining: 
     console.log("text", json?.data?.cards);
-    setList(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilterRestaurant(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilterRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //console.log("ResList", resList);
 
@@ -76,8 +76,9 @@ const[searchText, setSearchText] = useState("");
   //   return <Shimmer />;
   // }
 
-    return list.length === 0 ? <Shimmer /> :  (
-        <>
+    //return list.length === 0 ? <Shimmer /> :  (
+      return (
+      <>
         <div className="body">
             <div className="filter">
               {/**
