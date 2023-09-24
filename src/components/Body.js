@@ -67,8 +67,8 @@ const[searchText, setSearchText] = useState("");
 
     //Optional chaining: 
     console.log("text", json?.data?.cards);
-    setList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilterRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilterRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //console.log("ResList", resList);
 
