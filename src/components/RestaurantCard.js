@@ -11,15 +11,23 @@ const RestaurantCard = (props) => {
     */
     const {  cloudinaryImageId, cuisines, totalRatings, deliveryTime, name, avgRating } = resList?.info;
     return(
-        <div className="res-card">
+        <div className="col">
+            <div class="card shadow-sm">
             <img 
             className="resImg"
             alt="res-logo" src={CDN_URL + cloudinaryImageId} />
-            <h3>{name}</h3>
-            <p>{cuisines}</p>
-            <p>{totalRatings} STARS</p>
-            <p>Time to deliver: {avgRating} </p>
+            <div class="card-body">
+              <p class="card-text">{name}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">{totalRatings} STARS</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
         </div>
+        </div>
+
     )
 }
 

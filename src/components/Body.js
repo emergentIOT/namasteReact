@@ -80,7 +80,7 @@ const[searchText, setSearchText] = useState("");
     //return list.length === 0 ? <Shimmer /> :  (
       return (
       <>
-        <div className="body">
+        <div class="container">
             <div className="filter">
               {/**
                * Search bar
@@ -115,7 +115,7 @@ const[searchText, setSearchText] = useState("");
                   setList(filterList);
                 }}>Top Rated Restaurant</button>
             </div>
-            <div className="res-container">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               {
                 /**
                  * USE MAP FUNCTION
