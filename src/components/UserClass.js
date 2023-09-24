@@ -1,12 +1,26 @@
 /**
  * Class based component.
  * 
+ * How component is loaded or mounted?
+ *  - First of all constructor() is called.
+ *  - Secondly render() method is called.
+ * 
  */
 import React from "react"
 class UserClass extends React.Component {
 
     //props
     constructor(props) {
+        console.log("Children constructor");
+        /**
+         * super(props): Inside the constructor, you often see a call to super(props). 
+         * In the context of a React component, this is necessary because a React component is 
+         * typically a subclass of React.Component or a similar class. 
+         * super(props) calls the constructor of the parent class (React.Component) and 
+         * passes the props parameter to it. 
+         * This is required to ensure that the component is properly initialized and 
+         * can access its props.
+         */
         super(props);
 
         //state variables for class based components.
@@ -19,8 +33,18 @@ class UserClass extends React.Component {
         }
         console.log(this.state);
     }
+
+    /**
+     * this is called after render, or component already mounted on DOM or webpage.
+     */
+    componentDidMount() {
+        console.log("Children component did mount");
+    }
+
+
     //Inbuilt render() function
     render() {
+      console.log("Children render");
       const { name } = this.props;
       const { count2 } = this.state;
        return(
