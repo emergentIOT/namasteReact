@@ -36,9 +36,14 @@ class UserClass extends React.Component {
 
     /**
      * this is called after render, or component already mounted on DOM or webpage.
+     * 
+     * Usage: It is used to make API calls
+     * similar to useEffect(()=>{}, []) in functional component
      */
     componentDidMount() {
+
         console.log("Children component did mount");
+        // Api call
     }
 
 
