@@ -6,12 +6,34 @@
  *  - Secondly render() method is called.
  * 
  */
+
+/**
+ *          COMPONENT LIFE CYCLE
+ * Consider About.js - Parent 
+ *          UserClass.js - child
+ * 
+ * Parent constructor() 
+ * Parent render()
+ *  
+ *  - First constructor()
+ *  - First render()
+ * 
+ *  - Second constructor()
+ *  - second render()
+ *  DIff has calculated reconcileation happen
+ *  <DOM UPDATES in a single batch>
+ * 
+ *  - First componentDidMount()
+ *  - Second componentDidMount()
+ * 
+ * ParentComponentDidMount()
+ */
 import React from "react"
 class UserClass extends React.Component {
 
     //props
     constructor(props) {
-        console.log("Children constructor");
+        
         /**
          * super(props): Inside the constructor, you often see a call to super(props). 
          * In the context of a React component, this is necessary because a React component is 
@@ -22,7 +44,7 @@ class UserClass extends React.Component {
          * can access its props.
          */
         super(props);
-
+        console.log(this.props.name + "Children constructor");
         //state variables for class based components.
         // Their were no hooks earlier
         //Creating multiple state variables under this.state variable only
@@ -42,16 +64,19 @@ class UserClass extends React.Component {
      */
     componentDidMount() {
 
-        console.log("Children component did mount");
-        // Api call
+        console.log(this.props.name + "Children component did mount");
+        // Api calls
+
+
     }
 
 
     //Inbuilt render() function
     render() {
-      console.log("Children render");
+      
       const { name } = this.props;
       const { count2 } = this.state;
+      console.log(name + "Children render");
        return(
           <div>
             <h1>{name}</h1>
