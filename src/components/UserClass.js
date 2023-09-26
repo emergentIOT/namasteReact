@@ -92,7 +92,9 @@ class UserClass extends React.Component {
     }
 
     componentDidUpdate() {
-
+        /**
+         * This will be called once componentDidMount has been called.
+         */
     }
 
     /**
