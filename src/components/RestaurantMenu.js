@@ -14,6 +14,11 @@ const RestaurantMenu = () => {
   // By adding empty dependency array it will only load once and thats what we want for this type of request.
   useEffect(() => {
     fetchMenu();
+
+    //example of comonentWillUnmount()
+    return () => {
+      console.log("Unmounting Restaurant menu.js component");
+    }
   }, []);
 
   const fetchMenu = async () => {

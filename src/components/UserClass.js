@@ -49,9 +49,12 @@ class UserClass extends React.Component {
         // Their were no hooks earlier
         //Creating multiple state variables under this.state variable only
         this.state = {
-            count: 0,
+            api_user: {
+                name: "Dummy name",
+                location: "Default"
+            }
             //another state variable
-            count2: 4
+            //count2: 4
         }
         console.log(this.state);
     }
@@ -62,30 +65,58 @@ class UserClass extends React.Component {
      * Usage: It is used to make API calls
      * similar to useEffect(()=>{}, []) in functional component
      */
-    componentDidMount() {
-
-        console.log(this.props.name + "Children component did mount");
+    async componentDidMount() {
         // Api calls
+        const api_call = await fetch("https://api.github.com/users/akshaymarch7");
+        const github_user = await api_call.json();
+        console.log("Github user", github_user);
 
+        /**
+         * When this is called , updating cycle begins.
+         * Link: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+         * 
+         * Below code will run and update the state variable, whenever state variables changes 
+         *  it will re render the component.
+         * 
+         *  So, firstly constructor will call which will set dummy values, 
+         *  as api call didnt happend, then render will do a first call which will 
+         *  show the dummy data and after that componentDidMount() will call and api call 
+         *   will also be included and set the state variable, which will cause to re render the 
+         *    component and update the data based in API result, and after this it will call 
+         *    componentDidUpdate()
+         */
+        this.setState({
+            api_user: github_user
+        })
 
     }
 
+    componentDidUpdate() {
+
+    }
+
+    /**
+     * When this component disappear from UI html
+     */
+    componentWillUnmount() {
+
+    }
 
     //Inbuilt render() function
     render() {
-      
-      const { name } = this.props;
-      const { count2 } = this.state;
+      //const { name } = this.props;
+      const { name, location } = this.state.api_user;
+     
       console.log(name + "Children render");
        return(
           <div>
             <h1>{name}</h1>
-            <p>Way to use state variables: {this.state.count} - {count2}</p>
-            <button onClick={() => { 
+            <p>Location : {location} </p>
+            {/* <button onClick={() => { 
                 //Way to update state variable
                 this.setState({
                     count: this.state.count + 1,
-                    count2: this.state.count2 + 2
+                    //count2: this.state.count2 + 2
                 })
             }}>+</button>
 
@@ -93,7 +124,7 @@ class UserClass extends React.Component {
                 this.setState({
                     count: this.state.count - 1
                 })
-            }}>-</button>
+            }}>-</button> */}
             <h1>Class based component</h1>
           </div>
        )
