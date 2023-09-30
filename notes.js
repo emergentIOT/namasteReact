@@ -299,4 +299,26 @@ const parent = React.createElement("div", {id:"parent"}, React.createElement("di
 
 3. Link component for navigation
 
+
+
+
+
+************************ EPISODE 9 : OPTIMISING OUR APP ****************************************
+ 
+
+1. SINGLE RESPONSIBILITY 
+
+Custom hook 
+ - Its a normal utility function
+ - makes your code readable, reusable and modular 
+ - Rule to create hook useThenAnyNameYouWantToGiveHook()
+
+
+
+
+************************FINISHING EPISODE 9 : OPTIMISING OUR APP ****************************************
     */
+
+
+
+

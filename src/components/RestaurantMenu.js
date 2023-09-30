@@ -3,30 +3,35 @@ import { useEffect, useState } from "react";
 import { Shimmer } from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { CDN_URL, MENU_LIST } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
+  //const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
+  //Custom Hook
+  const resInfo = useRestaurantMenu(resId);
+
+
   console.log("resId", resId);
   //Make API Call using useEffect hook.
   // I will keep second argument as empty which leads to call this hook or function everytime my component renders.
   // By adding empty dependency array it will only load once and thats what we want for this type of request.
-  useEffect(() => {
-    fetchMenu();
+  // useEffect(() => {
+  //   fetchMenu();
 
-    //example of comonentWillUnmount()
-    return () => {
-      console.log("Unmounting Restaurant menu.js component");
-    }
-  }, []);
+  //   //example of comonentWillUnmount()
+  //   return () => {
+  //     console.log("Unmounting Restaurant menu.js component");
+  //   }
+  // }, []);
 
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_LIST + resId);
-    const json = await data.json();
-    console.log("Menu api call", json);
-    setResInfo(json.data);
-  };
+  // const fetchMenu = async () => {
+  //   const data = await fetch(MENU_LIST + resId);
+  //   const json = await data.json();
+  //   console.log("Menu api call", json);
+  //   setResInfo(json.data);
+  // };
 
   if (resInfo === null) {
     return <Shimmer />;

@@ -3,6 +3,7 @@ import resList from "../utils/mock_data";
 import { useState, useEffect } from "react";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 /**
  * Super power variable or STATE variable
@@ -67,10 +68,15 @@ const[searchText, setSearchText] = useState("");
 
     //Optional chaining: 
     console.log("text", json?.data?.cards);
-    setList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilterRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilterRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //console.log("ResList", resList);
+
+
+  const onlineStatus = useOnlineStatus();
+  console.log("online status", onlineStatus);
+  if(onlineStatus === false) return <h1>Looks like you are offline.</h1>
 
   //Conditional rendering
   // if(list.length === 0) {
