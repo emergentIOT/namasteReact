@@ -9,6 +9,18 @@
  * What is CDN ?
  * 
  * 
+ * ********* PARCEL **********
+ * 
+ * - Deb build 
+ * - Local server
+ * - HMR - Hot module replacement
+ * - File watching Algo
+ * - caching faster build
+ * - Minification
+ * - Error handling
+ * - Diff dev and prod bundles.
+ * 
+ * 
  * 
  * 
  */
