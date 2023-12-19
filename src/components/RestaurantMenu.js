@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
   const resInfo = useRestaurantMenu(resId);
 
 
-  console.log("resId", resId);
+  console.log("resId", resInfo);
   //Make API Call using useEffect hook.
   // I will keep second argument as empty which leads to call this hook or function everytime my component renders.
   // By adding empty dependency array it will only load once and thats what we want for this type of request.
@@ -39,9 +39,9 @@ const RestaurantMenu = () => {
 
   //if(resInfo === null) return <Shimmer />;
   const { name, cuisines, cloudinaryImageId, costForTwoMessage } =
-    resInfo?.cards[0].card.card.info;
+    resInfo?.data.cards[0].card.card.info;
   const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards[1].card.card;
+    resInfo?.data.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards[1].card.card;
   console.log("Menu List", itemCards);
   return (
     <div className="my-3 p-3 bg-body rounded shadow-sm">

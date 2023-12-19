@@ -313,7 +313,43 @@ Custom hook
  - makes your code readable, reusable and modular 
  - Rule to create hook useThenAnyNameYouWantToGiveHook()
 
+2.  ********** IMPORTANT CONCEPT ************
+ - Dynamic bundling
+ - Code splitting
+ - chunking
+ - lazy loading
 
+ Applying lazy loading 
+ e.g.
+    -- const About = lazy(() => import('location to component'));
+    we need to wrap it in suspense: 
+    element: (<Suspense fallback={ <Shimmer/> }> <About /> </Suspense);
+
+ ** File of size increase alot, while it bundle it , it loads single .js file by 
+    brining code all together 
+
+    How this can be optimised? 
+
+    Ans: we can bundle it into multiple file, 
+        eg. all components related to product will under index.js
+        eg. all components related to payment will under another bundle payment.js
+            - 
+
+        The above process known as code splitting, dyanamic bundling, lazy loading
+
+* Benefits of lazy loading include:
+
+1. Faster initial load times: 
+    Lazy loading reduces the amount of data that needs to be loaded when a page is first accessed, which can lead to faster page rendering and a better user experience.
+
+2. Reduced bandwidth usage: 
+    By only loading resources when they are needed, lazy loading can help conserve bandwidth, particularly on mobile devices and slower connections.
+
+3. Improved perceived performance: 
+    Users see content more quickly because the critical resources are loaded first, giving the impression of a faster application.
+
+4. Optimized resource usage: 
+    Resources that are not immediately needed are not loaded, which can save server resources and reduce hosting costs.
 
 
 ************************FINISHING EPISODE 9 : OPTIMISING OUR APP ****************************************

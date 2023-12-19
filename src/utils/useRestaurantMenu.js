@@ -5,7 +5,8 @@
  *  2. What will be the output
  */
 import { useEffect, useState } from "react";
-import { MENU_LIST } from "./constants";
+// import { MENU_LIST } from "./constants";
+
 const useRestaurantMenu = (resId) => {
     
     const[resInfo, setResInfo] = useState(null);
@@ -15,7 +16,7 @@ const useRestaurantMenu = (resId) => {
     }, []);
 
     const fetchData = async() => {
-        const data = await fetch(MENU_LIST + resId);
+        const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=" + resId);
         const json = await data.json();
         setResInfo(json);
     }
